@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<button onclick="generateString()">Generate String</button>
+<button onclick="generateString()">スダトラマンを生成</button>
 
 <p id="demo"></p>
 
@@ -17,7 +17,7 @@ function generateString() {
     if (randomString.indexOf(targetString) !== -1) {
       var index = randomString.indexOf(targetString);
       found = true;
-      document.getElementById("demo").innerHTML = " Target string found at index: " + index + "<br>" + randomString;
+      document.getElementById("demo").innerHTML = " この文字数で「スダトラマン」を生成しました！: " + index + "文字" + "<br>" + randomString;
     }
   }
 }
