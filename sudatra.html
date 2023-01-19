@@ -1,14 +1,28 @@
+<!DOCTYPE html>
 <html>
-<p>「スダトラマン」と入力すると「須田隼」と文字が出力されます。</p>
-<input type="text" id="inputText" placeholder="スダトラマンを入力してください">
-<button onclick="convertText()">変換する</button>
-<p id="outputText"></p>
+<body>
+
+<button onclick="generateString()">Generate String</button>
+
+<p id="demo"></p>
+
 <script>
-function convertText() {
-  var input = document.getElementById("inputText").value;
-  if (input === "スダトラマン") {
-    document.getElementById("outputText").innerHTML = "須田隼";
+function generateString() {
+  var characters = "スダトラマン";
+  var randomString = "";
+  var targetString = "スダトラマン";
+  var found = false;
+  while(!found){
+    randomString += characters.charAt(Math.floor(Math.random() * characters.length));
+    if (randomString.indexOf(targetString) !== -1) {
+      var index = randomString.indexOf(targetString);
+      found = true;
+      document.getElementById("demo").innerHTML = " Target string found at index: " + index + "<br>" + randomString;
+    }
   }
 }
 </script>
+
+</body>
 </html>
+
